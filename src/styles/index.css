@@ -1,12 +1,16 @@
-body {
-    background-image: url("https://img.freepik.com/free-vector/bring-night-space-wallpaper-with-glowing-starfield_1017-53512.jpg?t=st=1721078612~exp=1721082212~hmac=55690e8c963b312f9233608dbf33d4ed3b0d9163ac172e49183e3d885f62f703&w=826");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow-x: hidden;
+:root {
     --sb-track-color: #232E33;
     --sb-thumb-color: #9295b1;
     --sb-size: 5px;
+}
+
+body {
+    /* background: url(http://www.script-tutorials.com/demos/360/images/stars.png) top center #000; */
+    background-image: url("https://img.freepik.com/free-vector/bring-night-space-wallpaper-with-glowing-starfield_1017-53512.jpg?t=st=1721078612~exp=1721082212~hmac=55690e8c963b312f9233608dbf33d4ed3b0d9163ac172e49183e3d885f62f703&w=826");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    overflow-x: hidden;
 }
 
 nav img {
@@ -16,12 +20,50 @@ nav img {
 .navbar {
     background-color: transparent;
     backdrop-filter: blur(10px);
+    z-index: 9999 !important;
+}
+
+nav .favs-button {
+    display: flex;
+    align-items: center;
+}
+
+nav .favs-counter {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+}
+
+nav .fav-li-item {
+    display: flex;
+    align-items: center;
+}
+
+nav .fav-li-item .dropdown-item {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cards-container {
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
+}
+
+.card-header {
+    margin: 0 auto;
+    overflow: hidden;
+    height: 180px;
+    display: grid;
+    place-items: center;
+}
+
+.card-header {
+    width: calc(100% - 50px);
 }
 
 .cards-container::-webkit-scrollbar {
@@ -68,6 +110,7 @@ body::-webkit-scrollbar-thumb {
 .bi-star-fill {
     color: #fff;
 }
+
 .bi-star-fill:hover {
     color: #ffc107;
 }
