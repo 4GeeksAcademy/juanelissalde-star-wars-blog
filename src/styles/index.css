@@ -1,3 +1,73 @@
-/* 
-    General Styles
-*/
+body {
+    background-image: url("https://img.freepik.com/free-vector/bring-night-space-wallpaper-with-glowing-starfield_1017-53512.jpg?t=st=1721078612~exp=1721082212~hmac=55690e8c963b312f9233608dbf33d4ed3b0d9163ac172e49183e3d885f62f703&w=826");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    --sb-track-color: #232E33;
+    --sb-thumb-color: #9295b1;
+    --sb-size: 5px;
+}
+
+nav img {
+    width: 100px;
+}
+
+.navbar {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+.cards-container {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.cards-container::-webkit-scrollbar {
+    width: var(--sb-size);
+    height: var(--sb-size);
+}
+
+.cards-container::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    .cards-container {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+body::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+.bi-star-fill {
+    color: #fff;
+}
+.bi-star-fill:hover {
+    color: #ffc107;
+}
