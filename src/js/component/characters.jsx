@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Card } from "./card.jsx";
+import { CharacterCard } from "./characterCard.jsx";
 import { Context } from "../store/appContext"
 
 export const Characters = () => {
@@ -16,7 +16,7 @@ export const Characters = () => {
             <h1 className="text-white">Characters</h1>
             <div className="cards-container">
                 {store.characters && store.characters.length > 0 && store.characters.map((character, index) => (
-                    <Card
+                    <CharacterCard
                         key={index}
 
                         id={character.url.split("/")[5]}

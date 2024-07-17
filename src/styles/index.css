@@ -63,7 +63,8 @@ nav .fav-li-item .dropdown-item {
 }
 
 .card-header {
-    width: calc(100% - 50px);
+    width: calc(100% - 44px);
+    height: calc(100% - 10px);
 }
 
 .cards-container::-webkit-scrollbar {
@@ -79,6 +80,15 @@ nav .fav-li-item .dropdown-item {
 .cards-container::-webkit-scrollbar-thumb {
     background: var(--sb-thumb-color);
     border-radius: 3px;
+}
+
+
+@media (width < 950px) {
+    .detail-container{
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.4rem;
+    }
 }
 
 @supports not selector(::-webkit-scrollbar) {
@@ -113,4 +123,17 @@ body::-webkit-scrollbar-thumb {
 
 .bi-star-fill:hover {
     color: #ffc107;
+}
+
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.planet-img{
+    animation: rotate 8s linear infinite;
 }

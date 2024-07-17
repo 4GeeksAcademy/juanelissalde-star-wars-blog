@@ -10,14 +10,54 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			characters: [],
+			character: {},
+
+			planets: [],
+			planet: {},
+
 			favorites: []
 		},
 		actions: {
+			// Obtener personajes----------------------------------
 			getCharacters: async () => {
 				try {
 					let response = await fetch(`${url}/people/`);
 					let data = await response.json();
 					setStore({ characters: data.results });
+					return true;
+				} catch (error) {
+					console.log(error)
+					return false;
+				}
+			},
+			getCharacterDetail: async (id) => {
+				try {
+					let response = await fetch(`${url}/people/${id}`);
+					let data = await response.json();
+					setStore({ character: data });
+					return true;
+				} catch (error) {
+					console.log(error)
+					return false;
+				}
+			},
+			// Obtener planetas----------------------------------
+			getPlanets: async () => {
+				try {
+					let response = await fetch(`${url}/planets/`);
+					let data = await response.json();
+					setStore({ planets: data.results });
+					return true;
+				} catch (error) {
+					console.log(error)
+					return false;
+				}
+			},
+			getPlanetDetail: async (id) => {
+				try {
+					let response = await fetch(`${url}/planets/${id}`);
+					let data = await response.json();
+					setStore({ planet: data });
 					return true;
 				} catch (error) {
 					console.log(error)
