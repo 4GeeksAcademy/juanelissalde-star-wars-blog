@@ -19,7 +19,8 @@ export const Characters = () => {
                     <CharacterCard
                         key={index}
 
-                        id={character.url.split("/")[5]}
+                        id={character.id}
+                        img={character.img}
                         name={character.name}
                         gender={character.gender}
                         hairColor={character.hair_color}

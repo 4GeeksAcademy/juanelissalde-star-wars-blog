@@ -19,7 +19,8 @@ export const Planets = () => {
                     <PlanetCard
                         key={index}
 
-                        id={planet.url.split("/")[5]}
+                        id={planet.id}
+                        img={planet.img}
                         name={planet.name}
                         population={planet.population}
                         terrain={planet.terrain}

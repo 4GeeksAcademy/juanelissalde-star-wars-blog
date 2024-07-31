@@ -3,7 +3,7 @@ import "../../styles/home.css";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const CharacterCard = ({ id, name, gender, hairColor, eyeColor }) => {
+export const CharacterCard = ({ id, img, name, gender, hairColor, eyeColor }) => {
 
     const { actions, store } = useContext(Context);
 
@@ -25,7 +25,7 @@ export const CharacterCard = ({ id, name, gender, hairColor, eyeColor }) => {
                     </button>
                 </div>
                 <div>
-                    <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} className="card-img-top" alt="..." />
+                    <img src={img} className="card-img-top" alt="..." />
                     {/* <img src={props.name === "Tatooine" ? "https://static.wikia.nocookie.net/esstarwars/images/b/b0/Tatooine_TPM.png/revision/latest?cb=20131214162357" : `https://starwars-visualguide.com/assets/img/planets/${props.id}.jpg`} className="card-img-top" alt="..." onError={(e)=> e.target.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ9vE3lLIi7Nr8oxjQrjGNBbRV5jdKl16Oyg&s"} /> */}
                 </div>
                 <div className="card-body">

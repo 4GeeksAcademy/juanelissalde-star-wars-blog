@@ -25,6 +25,37 @@ export const Navbar = () => {
 						<input className="form-control me-2 w-100" type="search" placeholder="Search" aria-label="Search" />
 						<button className="btn btn-outline-warning" type="submit">Search</button>
 					</form>
+					<div className="btn-group y-2 me-2">
+						<button type="button" className="favs-button btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+							<span>Editor</span>
+						</button>
+						<ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+							<li className="fav-li-item">
+								<Link to="/editor">
+									<button className="dropdown-item text-center" type="button">
+										Planets
+									</button>
+								</Link>
+							</li>
+							<li className="fav-li-item">
+								<button className="dropdown-item text-center" type="button">
+									Characters
+								</button>
+							</li>
+							<li className="fav-li-item">
+								<button className="dropdown-item text-center" type="button">
+									Vehicles
+								</button>
+							</li>
+							<li className="fav-li-item">
+								<Link to="/editor">
+									<button className="dropdown-item text-center text-white" type="button">
+										See All
+									</button>
+								</Link>
+							</li>
+						</ul>
+					</div>
 					<div className="btn-group y-2">
 						<button type="button" className="favs-button btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
 							<span className="favs-counter badge me-1 p-0 bg-secondary rounded-circle text-light">{favsCounter}</span>

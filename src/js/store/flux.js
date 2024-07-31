@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const getState = ({ getStore, getActions, setStore }) => {
 
 	const url = "https://swapi.dev/api";
+	const api = "https://humble-couscous-44jxq4rw6jjf5j7r-3000.app.github.dev/"
 
 	// const [character, setCharacter] = useState([]);
 	// const [planet, setPlanet] = useState([]);
@@ -15,15 +16,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			planet: {},
 
+			vehicles: [],
+			vehicle: {},
+
 			favorites: []
 		},
 		actions: {
 			// Obtener personajes----------------------------------
 			getCharacters: async () => {
 				try {
-					let response = await fetch(`${url}/people/`);
+					let response = await fetch(`${api}characters`);
 					let data = await response.json();
-					setStore({ characters: data.results });
+					setStore({ characters: data });
 					return true;
 				} catch (error) {
 					console.log(error)
@@ -32,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getCharacterDetail: async (id) => {
 				try {
-					let response = await fetch(`${url}/people/${id}`);
+					let response = await fetch(`${api}/character/${id}`);
 					let data = await response.json();
 					setStore({ character: data });
 					return true;
@@ -44,9 +48,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// Obtener planetas----------------------------------
 			getPlanets: async () => {
 				try {
-					let response = await fetch(`${url}/planets/`);
+					let response = await fetch(`${api}planets`);
 					let data = await response.json();
-					setStore({ planets: data.results });
+					setStore({ planets: data });
 					return true;
 				} catch (error) {
 					console.log(error)
@@ -55,9 +59,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getPlanetDetail: async (id) => {
 				try {
-					let response = await fetch(`${url}/planets/${id}`);
+					let response = await fetch(`${api}/planets/${id}`);
 					let data = await response.json();
 					setStore({ planet: data });
+					return true;
+				} catch (error) {
+					console.log(error)
+					return false;
+				}
+			},
+			// Obtener vehiculos----------------------------------
+			getVehicles: async () => {
+				try {
+					let response = await fetch(`${api}vehicles`);
+					let data = await response.json();
+					setStore({ vehicles: data });
+					return true;
+				} catch (error) {
+					console.log(error)
+					return false;
+				}
+			},
+			getVehicleDetail: async (id) => {
+				try {
+					let response = await fetch(`${api}/vehicle/${id}`);
+					let data = await response.json();
+					setStore({ vehicle: data });
 					return true;
 				} catch (error) {
 					console.log(error)
